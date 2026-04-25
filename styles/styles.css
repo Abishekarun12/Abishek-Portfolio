@@ -1417,28 +1417,87 @@ body:has(button:hover) .cursor-ring {
   transform: translateX(50px);
 }
 
+/* Safety fallback — if GSAP never fires, elements still appear after 1.5s */
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* AI tools block — always visible, animates in with CSS */
+.ai-tools-reveal {
+  animation: aiToolsFadeIn 0.7s ease 0.3s both;
+}
+
+@keyframes aiToolsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Safe-area support (iPhone notch / Dynamic Island / home bar) */
+.nav {
+  padding-left: max(4rem, env(safe-area-inset-left));
+  padding-right: max(4rem, env(safe-area-inset-right));
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding-left: max(1.2rem, env(safe-area-inset-left));
+    padding-right: max(1.2rem, env(safe-area-inset-right));
+  }
+
+  .section {
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  .footer {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+}
+
 /* ===========================
    RESPONSIVE
 =========================== */
+
+/* ── Tablet landscape / small desktop ── */
 @media (max-width: 1100px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     padding-top: 7rem;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .hero-visual {
+    order: 2;
+    justify-content: center;
+    margin-top: 0;
   }
 
   .hero-desc {
     margin-inline: auto;
+    max-width: 540px;
   }
 
   .hero-cta,
   .hero-stats {
     justify-content: center;
-  }
-
-  .hero-visual {
-    justify-content: center;
-    margin-top: 2rem;
   }
 
   .scroll-indicator {
@@ -1460,13 +1519,15 @@ body:has(button:hover) .cursor-ring {
   }
 }
 
+/* ── Tablet portrait ── */
 @media (max-width: 900px) {
   .section {
     padding: 5rem 2rem;
   }
 
+  /* Nav */
   .nav {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
   }
 
   .nav-links {
@@ -1477,10 +1538,12 @@ body:has(button:hover) .cursor-ring {
     display: flex;
   }
 
+  /* Skills */
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Projects */
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -1494,35 +1557,369 @@ body:has(button:hover) .cursor-ring {
     min-height: 200px;
     height: 200px;
   }
+
+  .project-card.featured .project-num {
+    position: static;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  /* AI tools */
+  .ai-tools-block {
+    padding: 1.5rem;
+  }
+
+  .ai-tools-list {
+    gap: 1rem;
+  }
 }
 
-@media (max-width: 600px) {
-  .hero-title {
-    font-size: 2.4rem;
+/* ── Mobile — iPhone 13 / 14 (390×844) and similar ── */
+@media (max-width: 480px) {
+
+  /* Base */
+  body {
+    font-size: 0.95rem;
+  }
+
+  /* Nav */
+  .nav {
+    padding: 0.9rem 1.2rem;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 4.5rem 1.25rem 3rem;
+  }
+
+  .section-tag {
+    font-size: 0.7rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-tag {
+    font-size: 0.68rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-role {
+    font-size: 0.82rem;
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-num {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+  }
+
+  .stat-divider {
+    display: block;
+    height: 30px;
+  }
+
+  /* Hero visual — code card */
+  .hero-visual {
+    width: 100%;
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  .code-content {
+    font-size: 0.72rem;
+    padding: 1rem;
+    line-height: 1.65;
+  }
+
+  /* About */
+  .about-intro {
+    font-size: 1rem;
   }
 
   .about-details {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
   }
 
-  .hero-stats {
-    flex-direction: column;
+  .detail-item {
+    font-size: 0.8rem;
+  }
+
+  .about-text .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .tl-dot {
+    left: -1rem;
+  }
+
+  .tl-content h4 {
+    font-size: 0.92rem;
+  }
+
+  .tl-company,
+  .tl-content p {
+    font-size: 0.78rem;
+  }
+
+  /* Skills grid — single column on phone */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
-  .stat-divider {
-    display: none;
+  .skill-card {
+    padding: 1.2rem;
+  }
+
+  .skill-icon {
+    font-size: 1.6rem;
+  }
+
+  .skill-card h3 {
+    font-size: 0.82rem;
+  }
+
+  /* Tools row */
+  .tools-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.72rem;
+  }
+
+  .tools-list {
+    gap: 0.5rem;
+  }
+
+  .tool-tag {
+    font-size: 0.68rem;
+  }
+
+  /* AI tools */
+  .ai-tools-block {
+    padding: 1.25rem;
+  }
+
+  .ai-tools-header {
+    font-size: 0.7rem;
+  }
+
+  .ai-tools-desc {
+    font-size: 0.82rem;
+  }
+
+  .ai-tools-list {
+    gap: 0.75rem;
+  }
+
+  .ai-tool-logo {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+
+  .ai-tool-card {
+    font-size: 0.65rem;
+  }
+
+  /* Projects */
+  .project-card {
+    border-radius: var(--radius);
+  }
+
+  .project-info {
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.82rem;
+  }
+
+  .project-num {
+    font-size: 0.65rem;
+    padding: 1rem 1rem 0;
+  }
+
+  .project-img-wrap {
+    height: 170px;
+  }
+
+  .project-tags span {
+    font-size: 0.62rem;
+  }
+
+  .proj-link {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  /* Contact */
+  .contact-intro {
+    font-size: 0.9rem;
+  }
+
+  .contact-row {
+    padding: 0.8rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .contact-icon-wrap {
+    width: 36px;
+    height: 36px;
+    font-size: 0.82rem;
+  }
+
+  .contact-label {
+    font-size: 0.62rem;
+  }
+
+  .contact-value {
+    font-size: 0.82rem;
   }
 
   .cta-card {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .cta-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-card p {
+    font-size: 0.85rem;
+  }
+
+  .cta-card .btn {
+    width: 100%;
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .social-links {
+    gap: 0.6rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    margin-top: 3rem;
+    font-size: 0.72rem;
+  }
+
+  /* Modal */
+  .modal-box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  /* Buttons globally */
+  .btn {
+    font-size: 0.78rem;
+    padding: 0.7rem 1.3rem;
+  }
+}
+
+/* ── Very small phones (≤ 360px — Galaxy A series etc.) ── */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .hero-stats {
+    gap: 0.9rem;
+  }
+
+  .stat-num {
+    font-size: 1.25rem;
+  }
+
+  .ai-tools-list {
+    gap: 0.6rem;
+  }
+
+  .ai-tool-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
