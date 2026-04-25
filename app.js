@@ -155,7 +155,7 @@
     // ─── AI TOOL CARDS STAGGER ────────────────────
     gsap.from('.ai-tool-card', {
         scrollTrigger: {
-            trigger: '.ai-tools-list',
+            trigger: '.ai-tools-block',
             start: 'top 90%',
             toggleActions: 'play none none none'
         },
