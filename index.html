@@ -5,681 +5,540 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abishek's Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Abishek Arunachalam — Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-    <!-- //Track code clarity -->
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "nbxn4w4wf6");
-    </script>
-    <!-- //Track code clarity -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <!-- <img src="img/Ak1.png" alt="AbishekArunachalam"> -->
+<body class="dark-mode">
+
+    <!-- Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Noise overlay -->
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">AK<span>.</span></div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#portfolio" class="nav-link" data-section="portfolio">Work</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-circle-half-stroke"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link" data-section="home">Home</a>
+        <a href="#about" class="mobile-link" data-section="about">About</a>
+        <a href="#portfolio" class="mobile-link" data-section="portfolio">Work</a>
+        <a href="#skills" class="mobile-link" data-section="skills">Skills</a>
+        <a href="#contact" class="mobile-link" data-section="contact">Contact</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="section hero" id="home">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="dot"></span> Available for work
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-line" data-text="Abishek">Abishek</span>
+                <span class="hero-line accent" data-text="Arunachalam">Arunachalam</span>
+            </h1>
+            <p class="hero-role">Backend Developer <span class="separator">—</span> Laravel Specialist</p>
+            <p class="hero-desc">
+                Building robust, scalable web applications with clean code.
+                Turning complex backend logic into seamless user experiences.
+            </p>
+            <div class="hero-cta">
+                <a href="https://drive.google.com/file/d/1YFZcGNPJ6JfND-TE_Fwe1lELIfBdio0M/view?usp=sharing"
+                    class="btn btn-primary" target="_blank">
+                    View Resume <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="#portfolio" class="btn btn-outline">
+                    See My Work <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">2+</span>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">7+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">6</span>
+                    <span class="stat-label">Tech Stacks</span>
                 </div>
             </div>
-            <div class="right-header">
-                <h1 class="name">
-                    Hi, I'm <span>Abishek Arunachalam.</span>
-                    A Web Developer.
-                </h1>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="card-glow"></div>
+                <div class="card-inner">
+                    <div class="code-window">
+                        <div class="window-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <pre class="code-content"><code><span class="kw">class</span> <span class="fn">Abishek</span> {
+  <span class="prop">role</span> = <span class="str">'Laravel Dev'</span>;
+  <span class="prop">location</span> = <span class="str">'Chennai, IN'</span>;
+  <span class="prop">passion</span> = <span class="str">'Backend Magic'</span>;
+
+  <span class="fn">skills</span>() {
+    <span class="kw">return</span> [
+      <span class="str">'Laravel'</span>, <span class="str">'PHP'</span>,
+      <span class="str">'Java'</span>, <span class="str">'Python'</span>,
+      <span class="str">'MySQL'</span>, <span class="str">'HTML/CSS'</span>
+    ];
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-badge badge-1"><i class="fab fa-laravel"></i> Laravel</div>
+            <div class="floating-badge badge-2"><i class="fab fa-java"></i> Java</div>
+            <div class="floating-badge badge-3"><i class="fab fa-php"></i> PHP</div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about" id="about">
+        <div class="section-header">
+            <span class="section-tag">01 — About</span>
+            <h2 class="section-title">Who I Am</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-text reveal-left">
+                <p class="about-intro">
+                    I'm a <strong>backend-focused web developer</strong> based in Chennai, Tamil Nadu — with a strong
+                    focus on backend engineering using the <strong>Laravel framework</strong>.
+                </p>
                 <p>
-                    I love to create beautiful and functional websites.
-                    Especially in Backend programming.</p>
-                <h3 class="name">
-                    “Websites promote you <span>24/7</span>
-                    <br> No one can do that.”
-                    <br>
-                    <br />
-                </h3>
-                <div class="btn-con">
+                    Currently working as a <strong>Jr. Software Developer at CloudRevel Innovations</strong>,
+                    I design and develop applications, write clean maintainable code, and manage databases
+                    for real-world business systems.
+                </p>
+                <p>
+                    I'm self-taught, collaborative, and always hungry to learn. I believe in writing
+                    code that's not just functional, but elegant.
+                </p>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chennai, Tamil Nadu</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>abiarun7708@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7708626309</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-language"></i>
+                        <span>English, Tamil, Malayalam</span>
+                    </div>
+                </div>
+                <a href="https://drive.google.com/file/d/1YFZcGNPJ6JfND-TE_Fwe1lELIfBdio0M/view?usp=sharing"
+                    class="btn btn-primary" target="_blank">
+                    Download Resume <i class="fas fa-download"></i>
+                </a>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline reveal-right">
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-year">2024 – Present</span>
+                        <h4>Software Developer</h4>
+                        <span class="tl-company">Cloudrevel Innovations</span>
+                        <p>Promoted from Jr. Software Developer -> Software Developer</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-year">2023 – 2024</span>
+                        <h4>Jr. Software Developer</h4>
+                        <span class="tl-company">Cloudrevel Innovations</span>
+                        <p>Backend development with Laravel. Designing and maintaining business databases and web
+                            applications.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-year">2022 – 2023</span>
+                        <h4>Laravel Developer Intern</h4>
+                        <span class="tl-company">iCoffee (Pencil and Monk)</span>
+                        <p>Worked in small teams exploring new technologies, solving problems collaboratively.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-year">2019 – 2023</span>
+                        <h4>B.E. Computer Science</h4>
+                        <span class="tl-company">ARM College of Engineering & Technology</span>
+                        <p>Bachelor's degree in Computer Science, graduated 2023.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-year">2020 – 2022</span>
+                        <h4>Self-Learning — Core Java</h4>
+                        <span class="tl-company">Independent</span>
+                        <p>Invested personal time mastering Core Java through self-directed learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section skills-section" id="skills">
+        <div class="section-header">
+            <span class="section-tag">02 — Skills</span>
+            <h2 class="section-title">Tech Stack</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal-up" data-delay="0">
+                <div class="skill-icon"><i class="fab fa-laravel"></i></div>
+                <h3>Laravel</h3>
+            </div>
+            <div class="skill-card reveal-up" data-delay="0.1">
+                <div class="skill-icon"><i class="fab fa-php"></i></div>
+                <h3>PHP</h3>
+            </div>
+            <div class="skill-card reveal-up" data-delay="0.2">
+                <div class="skill-icon"><i class="fab fa-java"></i></div>
+                <h3>Java</h3>
+            </div>
+            <div class="skill-card reveal-up" data-delay="0.3">
+                <div class="skill-icon"><i class="fab fa-python"></i></div>
+                <h3>Python</h3>
+            </div>
+            <div class="skill-card reveal-up" data-delay="0.4">
+                <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-card reveal-up" data-delay="0.5">
+                <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                <h3>CSS3</h3>
+            </div>
+        </div>
+
+        <div class="tools-row reveal-up">
+            <span>Also proficient with:</span>
+            <div class="tools-list">
+                <span class="tool-tag">MySQL</span>
+                <span class="tool-tag">Bootstrap</span>
+                <span class="tool-tag">jQuery</span>
+                <span class="tool-tag">AJAX</span>
+                <span class="tool-tag">Git</span>
+                <span class="tool-tag">REST APIs</span>
+                <span class="tool-tag">Blade Templates</span>
+            </div>
+        </div>
+
+        <!-- AI Tools -->
+        <div class="ai-tools-block reveal-up">
+            <div class="ai-tools-header">
+                <i class="fas fa-robot"></i>
+                <span>AI-Powered Workflow</span>
+            </div>
+            <p class="ai-tools-desc">
+                I actively leverage AI tools to boost productivity, accelerate development, and write better code —
+                integrating them as a natural part of my engineering workflow.
+            </p>
+            <div class="ai-tools-list">
+                <div class="ai-tool-card">
+                    <div class="ai-tool-logo claude">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <span>Claude</span>
+                </div>
+                <div class="ai-tool-card">
+                    <div class="ai-tool-logo chatgpt">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <span>ChatGPT</span>
+                </div>
+                <div class="ai-tool-card">
+                    <div class="ai-tool-logo perplexity">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <span>Perplexity</span>
+                </div>
+                <div class="ai-tool-card">
+                    <div class="ai-tool-logo copilot">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span>GitHub Copilot</span>
+                </div>
+                <div class="ai-tool-card">
+                    <div class="ai-tool-logo gemini">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>Gemini</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section class="section portfolio" id="portfolio">
+        <div class="section-header">
+            <span class="section-tag">03 — Work</span>
+            <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="projects-grid">
+
+            <div class="project-card featured reveal-up">
+                <div class="project-num">01</div>
+                <div class="project-info">
+                    <h3>Ravanaa's Chat App</h3>
+                    <p>Real-time Laravel chat application deployed on a live public server using WebSockets and Laravel
+                        Echo for instant messaging.</p>
+                    <div class="project-tags">
+                        <span>Laravel</span><span>WebSockets</span><span>PHP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/laravel_chat_app" target="_blank" class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="http://51.21.196.54/" target="_blank" id="liveLink" class="proj-link live">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/chat.gif" alt="Chat App" loading="lazy">
+                </div>
+            </div>
+
+            <div class="project-card reveal-up" data-delay="0.1">
+                <div class="project-num">02</div>
+                <div class="project-info">
+                    <h3>FarmEasy</h3>
+                    <p>A farmer's companion app simplifying agricultural management and data tracking.</p>
+                    <div class="project-tags">
+                        <span>Laravel</span><span>PHP</span><span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/FarmEasy" target="_blank" class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/farmeasy.gif" alt="FarmEasy" loading="lazy">
+                </div>
+            </div>
+
+            <div class="project-card reveal-up" data-delay="0.15">
+                <div class="project-num">03</div>
+                <div class="project-info">
+                    <h3>CRUD Cars Login</h3>
+                    <p>Role-based CRUD system with per-user login, demonstrating full authentication and data management
+                        flows.</p>
+                    <div class="project-tags">
+                        <span>Laravel</span><span>Auth</span><span>CRUD</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/CarsLogin" target="_blank" class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/crud.gif" alt="CRUD App" loading="lazy">
+                </div>
+            </div>
+
+            <div class="project-card reveal-up" data-delay="0.2">
+                <div class="project-num">04</div>
+                <div class="project-info">
+                    <h3>Valaichuvadi</h3>
+                    <p>A Tamil book discovery and management website built for readers and libraries.</p>
+                    <div class="project-tags">
+                        <span>PHP</span><span>HTML/CSS</span><span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/books-webstie" target="_blank" class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/books.gif" alt="Books Website" loading="lazy">
+                </div>
+            </div>
+
+            <div class="project-card reveal-up" data-delay="0.25">
+                <div class="project-num">05</div>
+                <div class="project-info">
+                    <h3>Cipher Text Converter</h3>
+                    <p>Java-based cipher text encoder/decoder implementing multiple encryption algorithms.</p>
+                    <div class="project-tags">
+                        <span>Java</span><span>Algorithms</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/Cipher-Text-in-Java" target="_blank"
+                            class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/cipher.gif" alt="Cipher" loading="lazy">
+                </div>
+            </div>
+
+            <div class="project-card reveal-up" data-delay="0.3">
+                <div class="project-num">06</div>
+                <div class="project-info">
+                    <h3>User Data Connection</h3>
+                    <p>Laravel-powered user data connectivity app with full relational database management.</p>
+                    <div class="project-tags">
+                        <span>Laravel</span><span>PHP</span><span>MySQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Abishekarun12/User-s-Data-connectivity" target="_blank"
+                            class="proj-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-img-wrap">
+                    <img src="img/udc.gif" alt="User Data" loading="lazy">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+        <div class="section-header">
+            <span class="section-tag">04 — Contact</span>
+            <h2 class="section-title">Let's Talk</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <p class="contact-intro">
+                    I'm open to full-time roles, freelance projects, and interesting collaborations.
+                    Drop me a message or reach out on any platform below.
+                </p>
+                <div class="contact-details">
+                    <a href="mailto:abiarun7708@gmail.com" class="contact-row">
+                        <div class="contact-icon-wrap"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">abiarun7708@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+917708626309" class="contact-row">
+                        <div class="contact-icon-wrap"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <span class="contact-label">Phone</span>
+                            <span class="contact-value">+91 7708626309</span>
+                        </div>
+                    </a>
+                    <div class="contact-row">
+                        <div class="contact-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Chennai, Tamil Nadu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Abishekarun12" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" target="_blank"
+                        class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/Abishekarun12" target="_blank" class="social-link"
+                        aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/abiarunachalam/" target="_blank" class="social-link"
+                        aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-cta reveal-right">
+                <div class="cta-card">
+                    <div class="cta-bg"></div>
+                    <h3>Ready to build something great?</h3>
+                    <p>Whether it's a full web app, a backend API, or just a conversation — I'm here.</p>
+                    <a href="mailto:abiarun7708@gmail.com" class="btn btn-primary">
+                        Send a Message <i class="fas fa-paper-plane"></i>
+                    </a>
                     <a href="https://drive.google.com/file/d/1YFZcGNPJ6JfND-TE_Fwe1lELIfBdio0M/view?usp=sharing"
-                        class="main-btn">
-                        <span class="btn-text">View Resume</span>
-                        <span class="btn-icon"><i class="fas fa-laptop-code"></i></span>
+                        class="btn btn-outline" target="_blank">
+                        View Resume <i class="fas fa-file-alt"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </header>
-    <main>
-        <section class="container about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">my stats</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About me</h4>
-                    <p>
-                      I’m a web developer experienced in both front-end and back-end development, with additional expertise in Java, Python, AJAX, and jQuery.
-                        <br>
-                        <br>
-                        I'm a self-taught and sophisticated person.
-                        <br>
-                    </p>
-                    <br />
-                    <div class="btn-con">
-
-                        <a href="https://drive.google.com/file/d/1YFZcGNPJ6JfND-TE_Fwe1lELIfBdio0M/view?usp=sharing"
-                            class="main-btn">
-                            <span class="btn-text">Show Resume</span>
-
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Two +</p>
-                            <p class="small-text">Year<br /> Of Expirience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Active</p>
-                            <p class="small-text">Hard<br /> Worker</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Always</p>
-                            <p class="small-text">Eager to Learn <br />Something New</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">Learn</p>
-                            <p class="small-text">from<br /> Mistake</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-html5"></i>
-                            html5
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="html"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-css3"></i>
-                            css3
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">95%</p>
-                            <div class="progress">
-                                <span class="css"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-php"></i>
-                            php
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">65%</p>
-                            <div class="progress">
-                                <span class="php"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-java"></i>
-                            java
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="java"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-laravel"></i>
-                            Laravel
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">67%</p>
-                            <div class="progress">
-                                <span class="laravel"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">
-                            <i class="fab fa-python"></i>
-                            Python
-                        </p>
-                        <div class="progress-con">
-                            <p class="prog-text">60%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h4 class="stat-title">My Timeline</h4>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <p class="tl-duration">2023 - Present</p>
-                    <h5>Jr.Software Developer<span> - CloudRevel Innovations</span></h5>
-                    <p>
-                        Junior Software Developer (Laravel).
-                        <br>
-                        I started My career as a junior software Developer at CloudRevel Innovations Especially in
-                        backend Framework.
-                        Here I'm design and develop applications, write code, and otherwise maintain or update a
-                        business's database.
-                    </p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <p class="tl-duration">2022 - 2023</p>
-                    <h5>Laravel Developer<span> - iCoffee(Pencil and Monk).</span></h5>
-                    <p>
-                        I'm an Intern at iCoffee.Inc
-                        <br>
-                        I'm frequently work in small teams to solve problems, explore new technologies, and learn from
-                        one another.
-                        The ideal intern for this environment will be enthusiastic and collaborative.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <p class="tl-duration">2020 - 2022</p>
-                    <h5>Core Java<span> - Self Learning.</span></h5>
-                    <p>
-                        I have Personal Intrest on Core Java.
-                        <br>
-                        So, I took Sometime to code in java by my self-learning
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <p class="tl-duration">2020 - 2021</p>
-                    <h5>Video Editor<span> - A Youtube Channel</span></h5>
-                    <p>
-                        During the mentioned year, I'm maintaining a youtube channel to makes individual contents and
-                        I have learned some Editing Softwares like Filmora,Adobe AfterEffect Etc.,
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <p class="tl-duration">2019 - 2023</p>
-                    <h5>B.E Computer Science<span> - ARM COLLEGE OF ENGINEERING AND TECHNOLOGY</span></h5>
-                    <p>
-                        Completion of my College with Bachelor's Degree
-                        <br>
-                        Passed Out Year - 2023
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <p class="tl-duration">2017 - 2019</p>
-                    <h5>HSC<span> - Sairam Schools</span></h5>
-                    <p>
-                        Here, is the end of my schools studies but not
-                        <br>
-                        in the Stream of Computer Science.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <div class="tl-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <p class="tl-duration">2016 - 2017</p>
-                    <h5>SSLC<span> - State Board of Tamilnadu</span></h5>
-                    <p>
-                        I'm Completed My SSLC in State Board Education System with good Percentage.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="container" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Projects</span><span class="bg-text">My Work</span></h2>
-            </div>
-            <p class="port-text">
-                Here is some of my work that I've done in various programming languages.
-            </p>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/udc.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>User Data Connection By Laravel FrameWork</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/User-s-Data-connectivity" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/books.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Valaichuvadi</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/books-webstie" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/pfo.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>My Portfolio</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/Abishek-Portfolio" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i> -->
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/cipher.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Cipher Text Conversion</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/Cipher-Text-in-Java" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/crud.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>CRUD Process in each Login</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/CarsLogin" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" class="icon">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-instagram"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/farmeasy.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Farm Easy - A Farmer's Helper</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/FarmEasy" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <!-- <a href="#" class="icon">
-                                <i class="fab fa-behance"></i>
-                            </a>
-                            <a href="#" class="icon">
-                                <i class="fab fa-youtube"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/chat.gif" alt="">
-                    </div>
-                    <div class="hover-items">
-                        <h3>Ravanaa's Chat App</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Abishekarun12/laravel_chat_app" class="icon">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="http://51.21.196.54/" id="redirectLink" target="_blank">
-                                <i class="fas fa-external-link-alt" style="font-size:24px;"></i>
-                            </a>
-                            <!-- <a href="#" class="icon">
-                                <i class="fab fa-youtube"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div id="confirmModal" class="modal">
-                    <div class="modal-content">
-                        <h2 style="color: black;">Are you sure?</h2>
-                        <p style="color: #3838578c;">This URL redirects you to a Public Ip Address</p>
-
-                        <div class="modal-buttons">
-                            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
-                            <button class="proceed-btn" onclick="proceedRedirect()">Proceed</button>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-        <section class="container" id="blogs">
-            <div class="blogs-content">
-                <div class="main-title">
-                    <h2>My <span>Skills</span><span class="bg-text">My Skills</span></h2>
-                </div>
-                <div class="blogs">
-                    <div class="blog">
-                        <img src="img/java.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                CORE JAVA
-                            </h4>
-                            <p>
-                                The Java programming language,
-                                which is widely used with corporate applications and
-                                Android mobile operating system.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/laravel.webp" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Laravel FrameWork
-                            </h4>
-                            <p>Laravel is a backend framework that provides all of the features you need to build modern
-                                web applications,
-                                such as routing, validation, caching, queues, file storage, and more. </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/php.png" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Php
-                            </h4>
-                            <p>
-                                is the most widely used open source and general purpose server side scripting language
-                                used mainly in
-                                web development to create dynamic websites and applications.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/bootstrap.webp" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                Bootstrap
-                            </h4>
-                            <p>
-                                Bootstrap makes responsive web design a reality.
-                                It makes it possible for a web page or app to detect the
-                                visitor's screen size and orientation and automatically.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/html.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                HTML 5
-                            </h4>
-                            <p>
-                                HTML5 is the latest standard of Hypertext Markup Language,
-                                the code that describes the structure and presentation of web pages.
-                                It's made up of three codes: HTML, which keeps the structure
-                            </p>
-                        </div>
-                    </div>
-                    <div class="blog">
-                        <img src="img/css.jpg" alt="">
-                        <div class="blog-text">
-                            <h4>
-                                CSS 3
-                            </h4>
-                            <p>
-                                It is used for structuring, styling, and formatting web pages.
-                                Several new features have been added to CSS3 and it is supported by all modern web
-                                browsers.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-
-                        <h4>Contact me here</h4>
-                        <p>
-                            Here, I'm Providing My Personal data and Social Media Links
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location:</span>
-                                </div>
-                                <p>
-                                    Chennai,Tamilnadu
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email:</span>
-                                </div>
-                                <p>
-                                    <span> abiarun7708@gmail.com</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Education:</span>
-                                </div>
-                                <p>
-                                    <span> ARMCET, Chennai</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-mobile"></i>
-                                    <span>Mobile Number:</span>
-                                </div>
-                                <p>
-                                    <span> +91 7708626309 (or) 9025659245</span>
-                                </p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-globe-africa"></i>
-                                    <span>Languages:</span>
-                                </div>
-                                <p>
-                                    <span> English, Tamil, Malayalam</span>
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="right-contact">
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="https://www.facebook.com/abiarunachalam/" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a href="https://twitter.com/Abishekarun12" target="_blank">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="https://github.com/Abishekarun12" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/abishek-arunachalam-4202ab213/" target="_blank">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- <form action="" class="contact-form">
-                            <div class="input-control i-c-2">
-                                <input type="text" 
-                                required placeholder="YOUR NAME">
-                                <input type="email" 
-                                required placeholder="YOUR EMAIL">
-                            </div>
-                            <div class="input-control">
-                                <input type="text"
-                                 required placeholder="ENTER SUBJECT">
-                            </div>
-                            <div class="input-control">
-                                <textarea name="" 
-                                id="" cols="15" 
-                                rows="8" 
-                                placeholder="Message Here...">
-                                </textarea>
-                             </div>
-                            </form> -->
-                        <div class="submit-btn">
-                            <a href="https://drive.google.com/file/d/1YFZcGNPJ6JfND-TE_Fwe1lELIfBdio0M/view?usp=sharing"
-                                class="main-btn">
-                                <span class="btn-text">View Resume</span>
-                                <span class="btn-icon"><i class="fas fa-download"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyrights">
-                <p style="font-size: small; display: flex; justify-content: center; align-items: center;">
-                    <i class="fas fa-copyright" style="margin-right: 0.5rem;"></i>
-                    Copyrights 2024 Ak. All rights reserved.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <div class="controls">
-        <div class="control active-btn" data-id="home">
-            <i class="fas fa-home"></i>
+        <div class="footer">
+            <p>© 2024 Abishek Arunachalam. Built with passion in Chennai.</p>
         </div>
-        <div class="control" data-id="about">
-            <i class="fas fa-user"></i>
-        </div>
-        <div class="control" data-id="portfolio">
-            <i class="fas fa-code"></i>
-        </div>
-        <div class="control" data-id="blogs">
-            <i class="far fa-newspaper"></i>
-        </div>
-        <div class="control" data-id="contact">
-            <i class="fas fa-phone-alt"></i>
+    </section>
+
+    <!-- Redirect Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="modal-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>External Link</h3>
+            <p>This will redirect you to a public IP address server.</p>
+            <div class="modal-actions">
+                <button class="btn btn-outline" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="proceedRedirect()">Proceed</button>
+            </div>
         </div>
     </div>
-    <div class="theme-btn">
-        <i class="fas fa-adjust"></i>
-    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="app.js"></script>
 </body>
 
 </html>
-<!-- FontAwesome Icons (for external-link icon) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-
-<!-- Script -->
-<script>
-    var modal = document.getElementById("confirmModal");
-    var link = document.getElementById("redirectLink");
-    var targetUrl = "";
-
-    link.addEventListener("click", function (event) {
-        event.preventDefault(); // Stop normal link behavior
-        targetUrl = this.href;
-        modal.style.display = "block";
-    });
-
-    function closeModal() {
-        modal.style.display = "none";
-    }
-
-    function proceedRedirect() {
-        window.location.href = targetUrl;
-    }
-</script>
