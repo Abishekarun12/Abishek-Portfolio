@@ -32,3 +32,16 @@ Feel free to explore my portfolio, where I showcase my projects, skills, and acc
 [![](https://visitcount.itsvg.in/api?id=AbishekArun12&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+
+---
+
+## 🚀 Running locally
+
+This portfolio is a [Next.js](https://nextjs.org) app (App Router, TypeScript, GSAP).
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm start        # serve the production build
+```

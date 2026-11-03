@@ -1,20 +1,29 @@
 {
   "name": "abishek-portfolio",
-  "version": "1.0.0",
-  "description": "I’m **Abishek Arunachalam**, a passionate **web developer** with one year of hands-on experience in the **Laravel framework**. Throughout my journey, I’ve built and maintained robust web applications, leveraging Laravel’s powerful features to deliver scalable, efficient, and user-friendly solutions.",
-  "main": "app.js",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portfolio of Abishek Arunachalam — Full-Stack Developer (Backend, Cloud & AI Systems).",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abishekarun12/Abishek-Portfolio.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Abishekarun12/Abishek-Portfolio/issues"
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "gsap": "^3.15.0",
+    "next": "^16.4.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
-  "homepage": "https://github.com/Abishekarun12/Abishek-Portfolio#readme"
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
 }

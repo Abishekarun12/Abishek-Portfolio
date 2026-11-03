@@ -22,8 +22,8 @@
   --text-muted: #6b6b80;
   --text-dim: #9898aa;
 
-  --font-display: 'Syne', sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-display: var(--font-syne), 'Syne', sans-serif;
+  --font-mono: var(--font-space-mono), 'Space Mono', monospace;
 
   --radius: 12px;
   --radius-lg: 20px;
