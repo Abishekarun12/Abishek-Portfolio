@@ -4,58 +4,84 @@ export const GITHUB_URL = "https://github.com/Abishekarun12";
 export const EMAIL = "abiarun7708@gmail.com";
 export const PHONE = "+91 7708626309";
 export const PHONE_HREF = "tel:+917708626309";
-export const LOCATION = "Thiruthuraipoondi, Tamil Nadu";
+export const LOCATION = "Dubai, UAE";
 
 export const navItems = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "portfolio", label: "Work" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", icon: "fas fa-house" },
+  { id: "about", label: "About", icon: "far fa-circle-user" },
+  { id: "portfolio", label: "Work", icon: "fas fa-briefcase" },
+  { id: "skills", label: "Skills", icon: "fas fa-code" },
+  { id: "contact", label: "Contact", icon: "far fa-envelope" },
 ];
 
 export const heroStats = [
-  { value: "2+", label: "Years Exp." },
-  { value: "8+", label: "Projects" },
-  { value: "5", label: "Domains" },
+  { value: "3.5+", label: "Years Experience", icon: "fas fa-briefcase" },
+  { value: "15+", label: "Projects Delivered", icon: "fas fa-folder" },
+  { value: "AWS", label: "Cloud Expert", icon: "fas fa-cloud" },
+  { value: "100%", label: "Client Satisfaction", icon: "fas fa-trophy" },
 ];
 
-export const timeline = [
+export const heroTech = [
+  { label: "Laravel", icon: "fab fa-laravel", color: "#f9322c" },
+  { label: "AWS", icon: "fab fa-aws", color: "#ff9900" },
+  { label: "Next.js", icon: "next", color: "#ffffff" },
+  { label: "Docker", icon: "fab fa-docker", color: "#2496ed" },
+  { label: "MySQL", icon: "fas fa-database", color: "#f29111" },
+];
+
+export type Experience = {
+  period: string;
+  role: string;
+  company: string;
+  location?: string;
+  current?: boolean;
+  text?: string;
+};
+
+export const experience: Experience[] = [
   {
-    year: "2023 – Present",
-    title: "Software Engineer",
+    period: "2026 – Present",
+    role: "Software Engineer",
+    company: "CloudGate Host",
+    location: "Dubai, UAE",
+    current: true,
+  },
+  {
+    period: "2023 – Sep 2026",
+    role: "Software Engineer",
     company: "Cloudrevel Innovation",
-    text: "Built Let's Dine, My Ledger and the Zlatta admin panel, and contributed to RUGR-Udaan. Designed scalable REST APIs for production Laravel apps serving 1,000+ users.",
+    text: "Joined as a Jr. Software Developer and was promoted to Software Engineer. Built Let's Dine, My Ledger and the Zlatta admin panel, and contributed to RUGR-Udaan — designing scalable REST APIs for production Laravel apps serving 1,000+ users.",
   },
   {
-    year: "Own Product",
-    title: "DevOps AI Agent",
-    company: "Solo — design, build & deploy",
-    text: "Independently designed and built a full-stack AI-powered AWS infrastructure platform — Next.js + Laravel 11 + FastAPI, transparent AWS proxy, multi-provider LLM routing.",
-  },
-  {
-    year: "2023 – 2024",
-    title: "Jr. Software Developer",
-    company: "Cloudrevel Innovation",
-    text: "Backend development with Laravel — designing and maintaining business databases, REST APIs and web applications. Promoted to Software Engineer.",
-  },
-  {
-    year: "2022 – 2023",
-    title: "Laravel Developer Intern",
+    period: "2022 – 2023",
+    role: "Laravel Developer Intern",
     company: "iCoffee (Pencil and Monk)",
     text: "Full SDLC exposure — requirements, design, coding, testing and debugging. Built web features with Laravel MVC, AJAX, jQuery and Tailwind CSS on real client projects.",
   },
+];
+
+export const education = [
   {
-    year: "2019 – 2023",
-    title: "B.E. Computer Science",
-    company: "ARM College of Engineering & Technology",
-    text: "Bachelor's degree in Computer Science & Engineering. CGPA 7.7 / 10.",
+    period: "2019 – 2023",
+    title: "B.E. Computer Science & Engineering",
+    place: "ARM College of Engineering & Technology",
+    text: "CGPA 7.7 / 10",
   },
+];
+
+export const certifications = [
   {
-    year: "Certified",
-    title: "IBM — Web Phishing Detection",
-    company: "IBM · PrepInsta",
+    title: "Web Phishing Detection",
+    issuer: "IBM · PrepInsta",
     text: "Project certification for an ML-based real-time phishing URL detection tool.",
+  },
+];
+
+export const ownProducts = [
+  {
+    title: "DevOps AI Agent",
+    tag: "Solo — design, build & deploy",
+    text: "A full-stack AI-powered AWS infrastructure platform — Next.js + Laravel 11 + FastAPI, with a transparent AWS proxy and multi-provider LLM routing.",
   },
 ];
 

@@ -6,20 +6,34 @@ import { navItems } from "@/lib/data";
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [light, setLight] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Restore the saved theme
   useEffect(() => {
     try {
-      if (localStorage.getItem("theme") === "light") document.body.classList.add("light-mode");
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        setLight(true);
+      }
     } catch {}
   }, []);
 
   const toggleTheme = () => {
     const isLight = document.body.classList.toggle("light-mode");
+    setLight(isLight);
     try {
       localStorage.setItem("theme", isLight ? "light" : "dark");
     } catch {}
   };
+
+  // Glass nav background once the page is scrolled
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Highlight the nav link for the section in the middle of the viewport
   useEffect(() => {
@@ -51,35 +65,52 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="nav">
-        <div className="nav-logo">
-          A<span>.A</span>
+      <nav className={`nav${scrolled ? " scrolled" : ""}`}>
+        <div className="nav-brand">
+          <a href="#home" className="nav-logo" aria-label="Abishek — home">
+            <span className="logo-mark">AA</span>
+            Abishek
+          </a>
+          <span className="nav-status">
+            <span className="logo-dot" /> Available for work
+          </span>
         </div>
+
         <div className="nav-links">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               className={`nav-link${active === item.id ? " active" : ""}`}
-              data-section={item.id}
             >
+              <i className={item.icon} />
               {item.label}
             </a>
           ))}
         </div>
-        <button className="theme-toggle" aria-label="Toggle theme" onClick={toggleTheme}>
-          <i className="fas fa-circle-half-stroke" />
-        </button>
-        <button
-          className={`hamburger${menuOpen ? " open" : ""}`}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+
+        <div className="nav-actions">
+          <button
+            className="theme-toggle"
+            aria-label={light ? "Switch to dark mode" : "Switch to light mode"}
+            onClick={toggleTheme}
+          >
+            <i className={light ? "far fa-moon" : "far fa-sun"} />
+          </button>
+          <a href="#contact" className="nav-cta">
+            Let&apos;s Connect <i className="fas fa-arrow-right" />
+          </a>
+          <button
+            className={`hamburger${menuOpen ? " open" : ""}`}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </nav>
 
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
@@ -88,9 +119,9 @@ export default function Nav() {
             key={item.id}
             href={`#${item.id}`}
             className="mobile-link"
-            data-section={item.id}
             onClick={() => setMenuOpen(false)}
           >
+            <i className={item.icon} />
             {item.label}
           </a>
         ))}

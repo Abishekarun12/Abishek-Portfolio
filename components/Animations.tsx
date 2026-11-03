@@ -22,8 +22,8 @@ export default function Animations() {
         .to(".hero-role", { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
         .to(".hero-desc", { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
         .to(".hero-cta", { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-        .to(".hero-stats", { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
-        .to(".hero-visual", { opacity: 1, x: 0, duration: 0.8, ease: "power2.out" }, "-=0.5")
+        .to(".hero-visual", { opacity: 1, x: 0, duration: 0.9, ease: "power2.out" }, "-=0.8")
+        .to(".hero-stats", { opacity: 1, y: 0, duration: 0.7 }, "-=0.4")
         .to(".scroll-indicator", { opacity: 1, duration: 0.6 }, "-=0.2");
 
       // Scroll reveals
@@ -143,9 +143,12 @@ export default function Animations() {
           statObserver.unobserve(el);
           const original = el.dataset.value ?? el.textContent ?? "";
           el.dataset.value = original;
-          const target = parseInt(original, 10);
-          if (isNaN(target)) return;
-          const suffix = original.endsWith("+") ? "+" : "";
+          // e.g. "2.7+" → 2.7 and "+"; text like "AWS" is left as-is
+          const match = original.match(/^(\d+(?:\.(\d+))?)(.*)$/);
+          if (!match) return;
+          const target = parseFloat(match[1]);
+          const decimals = match[2]?.length ?? 0;
+          const suffix = match[3];
           const step = target / 40;
           let current = 0;
           const timer = window.setInterval(() => {
@@ -154,7 +157,8 @@ export default function Animations() {
               current = target;
               clearInterval(timer);
             }
-            el.textContent = Math.floor(current) + suffix;
+            el.textContent =
+              (decimals ? current.toFixed(decimals) : Math.floor(current).toString()) + suffix;
           }, 35);
           timers.push(timer);
         });

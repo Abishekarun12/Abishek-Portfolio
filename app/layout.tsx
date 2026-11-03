@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Space_Mono, Syne } from "next/font/google";
+import { Inter, JetBrains_Mono, Montserrat, Syne } from "next/font/google";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
+import "./hero.css";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -11,10 +12,22 @@ const syne = Syne({
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
   display: "swap",
 });
 
@@ -32,7 +45,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${inter.variable} ${montserrat.variable} ${jetbrains.variable}`}>
       {/* The theme toggle adds/removes `light-mode` on body at runtime */}
       <body className="dark-mode" suppressHydrationWarning>
         {children}
